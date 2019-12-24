@@ -1,0 +1,11 @@
+﻿@using BlackjackProject.Models;
+@{
+    var game = ((Game)Session["Game"]);
+}
+
+<div class="results">
+    You busted, with a total of @game.playerHand.GetTotal().
+    <br />
+    As such, the computer wins by default.
+</div>
+@Html.ActionLink("Continue", "Bet")

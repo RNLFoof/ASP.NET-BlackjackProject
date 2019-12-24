@@ -1,0 +1,117 @@
+﻿body
+{
+    padding: 0;
+    margin: 0;
+}
+
+/*Related to the cards*/
+/* Both width and height are based on vh to have a consistent aspect ratio. */
+.card {
+    background-color: white;
+    width: 12vh;
+    height: 18vh;
+    max-height: 18vh;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    float: left;
+    position: relative;
+    font-size: 4vh;
+    border-radius: 4%;
+    padding: 1vh;
+    line-height: 80%;
+    box-sizing: border-box;
+    font-family: "Lucida Console", Monaco, monospace;
+}
+
+.cardEdge /* Used to have cards overlap */ {
+    float: left;
+    width: 6vh;
+    height: 18vh;
+}
+
+.redcard
+{
+    color: darkred;
+}
+
+.blackcard {
+    color: black;
+}
+.hiddenHand .cardEdge:nth-child(1n+2) .card {
+    background-color: midnightblue;
+    font-size: 0;
+}
+
+/* Related to the hands and table */
+.hand {
+    height: 20vh;
+    width: 100vw;
+    margin: 0;
+    background-color: #662200;
+    padding: 0.5vh;
+    border-style: outset;
+    border-color: #331100;
+    border-width: 0.5vh;
+    box-sizing: border-box;
+}
+
+.table {
+    background-color: #003300;
+    width: 100vw;
+    height: 60vh;
+    padding: 0;
+    margin: 0;
+}
+
+/* Related to controls */
+.menu {
+    margin: auto;
+    height: 0;
+    width: 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: red;
+}
+
+    .menu a, .menu input, #betSliderLabel {
+        margin: 0.5vw;
+        width: 20vw;
+        height: 6vh;
+        font-size: 5vh;
+        text-decoration: none;
+        text-align: center;
+        color: black;
+        display: inline-block;
+        -webkit-transform: translate(-50%,-50%);
+        -moz-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        -o-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+    }
+
+    .menu a
+    {
+        background-color: white;
+        border-style: solid;
+        border-color: black;
+        border-width: 0.3vh;
+        box-sizing: border-box;
+    }
+
+.results {
+    font-size: 5vh;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    display: inline-block;
+    white-space: nowrap;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}

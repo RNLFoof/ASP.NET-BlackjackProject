@@ -1,0 +1,26 @@
+﻿@using BlackjackProject.Models;
+@{
+    var game = ((Game)Session["Game"]);
+}
+
+<div class="results">
+    Your total is @game.playerHand.GetTotal().
+    <br />
+    The computer's total is @game.computerHand.GetTotal()@if (game.computerHand.IsBusted)
+    {<text>, so it busted</text>}.
+
+    <br />
+    @if (game.Winner() == 'P')
+    {
+        <text>You win!</text>
+    }
+    else if (game.Winner() == 'C')
+    {
+        <text>The computer wins!</text>
+    }
+    else
+    {
+        <text>It's a push!</text>
+    }
+</div>
+@Html.ActionLink("Continue", "Bet")

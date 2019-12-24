@@ -1,0 +1,31 @@
+﻿@model BlackjackProject.Models.Game
+@using BlackjackProject.Models;
+@{
+    /**/
+
+    var game = ((Game)Session["Game"]);
+    game.bet = 0;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <div class="results">
+            You have a balance of $@game.balance.
+            <br />
+            How much do you want to bet?
+        </div>
+        <div>
+            <input type="range" min="1" max="@game.MaxBet()" value="@game.DefaultBet()" id="betSlider" name="betSlider" oninput="betSliderUpdateValue()">
+            <label id="betSliderLabel">$@game.DefaultBet()</label>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Start" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}

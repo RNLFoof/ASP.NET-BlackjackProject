@@ -1,0 +1,49 @@
+﻿@using BlackjackProject.Models;
+@{
+    var game = ((Game)Session["Game"]);
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack</title>
+    <link rel="stylesheet" href="~/Content/blackjack.css">
+    <script type="text/javascript" src="~/Scripts/blackjack.js"></script>
+</head>
+<body>
+    <div class="hand @game.HiddenHand()">
+        @foreach (Card c in game.computerHand.Cards)
+        {
+            <div class="cardEdge">
+                <div class="card @c.Color()card">
+                    @c.Number
+                    <br />
+                    @c.UnicodeSuit()
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="table">
+        <div class="menu">
+            @RenderBody()
+        </div>
+    </div>
+
+    <div class="hand">
+        @foreach (Card c in game.playerHand.Cards)
+        {
+            <div class="cardEdge">
+                <div class="card @c.Color()card">
+                    @c.Number
+                    <br />
+                    @c.UnicodeSuit()
+                </div>
+            </div>
+        }
+    </div>
+
+</body>
+</html>
